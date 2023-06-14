@@ -1,0 +1,129 @@
+/* media queries */
+/* para celulares */
+@media (max-width: 768px) {
+    .caja {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+    .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis {
+      background-color: beige;
+      width: 300px;
+      height: 300px;
+      margin-left: 100px;
+      padding: 2px;
+    }
+    .caja2 {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    .card-nueve, .card-diez {
+      background-color: beige;
+      width: 300px;
+      height: 300px;
+      padding: 2px;
+      margin-left: 100px;
+    }
+    .caja-velas {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: center;
+      align-items: start;
+      margin-left: 0px;
+    }
+    .imagen-velas {
+      background-color: beige;
+      width: 270px;
+      height: 250px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    body {
+      font-size: 16px;
+    }
+    .caja {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis {
+      background-color: beige;
+      width: 300px;
+      height: 300px;
+      margin-left: 100px;
+      padding: 2px;
+    }
+    .caja2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
+    .card-nueve, .card-diez {
+      background-color: beige;
+      width: 300px;
+      height: 300px;
+      padding: 2px;
+      margin-left: 100px;
+    }
+    .caja-velas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: center;
+      align-items: start;
+      margin-left: 0px;
+    }
+    .imagen-velas {
+      background-color: beige;
+      width: 270px;
+      height: 250px;
+    }
+  }
+  
+  /* Estilos adicionales para tabletas en orientación horizontal */
+  @media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+    body {
+      font-size: 16px;
+    }
+    .caja {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis {
+      background-color: beige;
+      width: 300px;
+      height: 300px;
+      margin-left: 100px;
+      padding: 2px;
+    }
+    .caja2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
+    .card-nueve, .card-diez {
+      background-color: beige;
+      width: 300px;
+      height: 300px;
+      padding: 2px;
+      margin-left: 100px;
+    }
+    .caja-velas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: center;
+      align-items: start;
+      margin-left: 0px;
+    }
+    .imagen-velas {
+      background-color: beige;
+      width: 270px;
+      height: 250px;
+    }
+  }
+  

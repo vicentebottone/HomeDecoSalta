@@ -1,0 +1,199 @@
+// mixin
+
+
+@mixin productos($width, $height, $margin, $mleft, $padding){
+    width: $width;
+    height: $height;
+    margin: $margin;
+    margin-left: $mleft;
+    padding: $padding;
+    background-color: beige;
+
+}
+
+
+@mixin header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin grid($columnas, $filas){
+    display: grid;
+    grid-template-columns: $columnas;
+    grid-template-rows: $filas;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin hover{
+    border-radius: 50%;
+    opacity: 50%;
+    color: whitesmoke;
+    background-color: cadetblue;
+}
+@mixin titulo-principal-hover{
+    background-color: cadetblue;
+    opacity: 50%;
+    text-decoration: none;
+    color: beige;
+    text-align: center;
+}
+@mixin titulo-principal{
+    text-decoration: none;
+    color: beige;
+    text-align: center;
+    background-color: cadetblue;
+    opacity: 50%;
+}
+
+@mixin parrafos{
+    text-align: center;
+    margin: 3rem;
+    color: beige;
+}
+
+@mixin parrafos-productos{
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+@mixin celulares{
+    .caja{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+    .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis{
+        background-color: beige;
+        width: 300px;
+        height: 300px;
+        margin-left: 100px;
+        padding: 2px;
+    }
+    
+    .caja2{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .card-nueve, .card-diez{
+        background-color: beige;
+        width: 300px;
+        height: 300px;
+        padding: 2px;
+        margin-left: 100px;
+    }
+    .caja-velas{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+        align-items: start;
+        margin-left: 0px;
+    }
+    .imagen-velas{
+        background-color: beige;
+        width: 270px;
+        height: 250px;
+    
+    }
+}
+
+@mixin tablets{
+    @media (min-width: 768px) and (max-width: 1024px) {
+        body {
+          font-size: 16px;
+        }
+        .caja{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+        .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis{
+            background-color: beige;
+            width: 300px;
+            height: 300px;
+            margin-left: 100px;
+            padding: 2px;
+        }
+        .caja2{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+        }
+        .card-nueve, .card-diez{
+            background-color: beige;
+            width: 300px;
+            height: 300px;
+            padding: 2px;
+            margin-left: 100px;
+        }
+        .caja-velas{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-content: center;
+            align-items: start;
+            margin-left: 0px;
+        }
+        .imagen-velas{
+            background-color: beige;
+            width: 270px;
+            height: 250px;
+    
+        }
+    
+      }
+      
+      
+      @media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+        body {
+            font-size: 16px;
+          }
+          .caja{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(3, 1fr);
+          }
+          .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis{
+              background-color: beige;
+              width: 300px;
+              height: 300px;
+              margin-left: 100px;
+              padding: 2px;
+          }
+          .caja2{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(1, 1fr);
+          }
+          .card-nueve, .card-diez{
+              background-color: beige;
+              width: 300px;
+              height: 300px;
+              padding: 2px;
+              margin-left: 100px;
+          }
+          .caja-velas{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(3, 1fr);
+              justify-content: center;
+              align-items: start;
+              margin-left: 0px;
+          }
+          .imagen-velas{
+              background-color: beige;
+              width: 270px;
+              height: 250px;
+      
+          }
+      }
+}

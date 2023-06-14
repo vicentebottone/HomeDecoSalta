@@ -1,0 +1,232 @@
+/*RESET*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    text-decoration: none;
+}
+
+//import 
+@import "../utilidades/vars";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+body{
+    background-color: $color-terciario;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1{
+    color: whitesmoke;
+    text-align: center;
+}
+
+
+//header
+header{
+    @include header;
+    padding: 0;
+    background-color: $color-secundario;
+    margin: 0;
+    border-color: $color-terciario;
+    width: $medida-principal;
+    a:hover{
+            .titulo-principal:hover{
+                @include titulo-principal-hover;
+            }
+            
+        h1{
+            text-decoration: none;
+            color: $color-cuarto;
+            @extend %titulo-principal;
+        }
+    }
+    nav{
+        .color-nav{
+            background-color: $color-secundario;
+        }
+        div{
+
+            ul{
+                li{
+                    @extend %nav-ul-li;
+                    a:hover{
+                        text-decoration: none; 
+                        @include hover; }
+                }
+                li{
+                    @extend %nav-ul-li;
+                    a:hover{@include hover;}
+                    ul{
+                        .color-nav{
+                            background-color: $color-secundario;
+                        }
+                        li{
+                            @extend %nav-ul-li;
+                            a:hover{
+                                text-decoration: none;
+                                @include hover; }
+                        }
+                    }
+                }
+                li{
+                    @extend %nav-ul-li;
+                    a:hover{
+                        text-decoration: none; 
+                        @include hover; }
+                }
+            }
+        }
+    }
+}
+
+/*main*/
+main{
+    h1{
+        color: $color-quinto;
+        text-align: center;
+        margin: 0px;
+        padding: 5px;
+        background-color: $color-principal;
+    }
+    h2{
+        text-align: center;
+        color: $color-quinto;
+        background-color: $color-principal;
+    }
+    h3{
+        text-align: center;
+        color: $color-cuarto;
+    }
+    h4{
+        color: $color-sexto;
+        text-align: center;
+        margin-left: 5rem;
+    }
+    p{
+        text-align: center;
+        margin: 5px;
+        padding: 5px;
+    }
+    .banner-home{
+        max-width: $medida-principal;
+        height: auto;
+    }
+    .parrafo-home{
+        @include parrafos;
+    }
+    .carrusel-container{
+        @include flex;
+        width: $medida-principal;
+        max-width: $medida-principal;
+    }
+    div{
+        .carousel{
+            width: $med-carousel-width;
+            height: auto;
+        }
+            div{
+                .carousel-inner{
+                    img{ 
+                        width: $medida-principal;
+                        max-width: $medida-principal;
+                        height: $medida-principal;
+                    }
+                }
+            }
+    }
+    .caja{
+        @include grid(repeat(2, 2fr), repeat(3, 2fr));
+        h3{
+            text-align: center;
+            color: $color-cuarto;
+        }
+        .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis{
+            @include productos(500px, 500px, 20px, 200px, 10px);
+        }
+        .parrafo-productos{
+            @include parrafos-productos;
+        }
+    }
+    section{
+        h2{
+            text-align: center;
+            color: $color-quinto;
+            background-color: $color-principal;
+        }
+        .caja2{
+            @include grid(repeat(2, 1fr), repeat(1, 1fr));
+            .card-nueve, .card-diez{
+                @include productos(500px, 500px, 20px, 200px, 10px);
+            }
+        }
+    }
+    .caja-velas{
+        @include grid(repeat(2, 1fr), repeat(4, 1fr));
+        gap: 5px;
+        margin-left: 200px;
+        .imagen-velas{
+            @include productos(300px, 300px, 30px, 0, 10px);
+            margin-bottom: 50px;
+        }
+    }
+    .parrafo-productos-velas{
+        @extend %parrafo-productos-velas;
+    }
+    .destacados{
+        text-align: center;
+        margin: 0px;
+        padding: 20px;
+        background-color: $color-principal;
+    }
+    form{
+        background-color: $color-terciario;
+        text-align: center;
+        padding: $med-padding-form;
+        fieldset{
+            @extend %formulario;
+        }
+    }
+}
+
+
+/*footer*/
+
+footer{
+    @include header;
+    text-align: center;
+    gap: 30px;
+    background-color: $color-principal;
+    div{
+        ul{
+            li{
+            @extend %footer;
+            .ig-logo{
+                    left: 0px;
+                    @extend %logo;
+                }
+            }
+        }
+    }
+    div{
+        .boton-volver-arriba{
+            @extend %boton-volver-arriba;
+        }
+    }
+    div{
+        .wpplogo{
+            right: 30px;
+            @extend %logo;
+            background-color: $color-septimo;
+            color: $color-septimo;
+        }
+    }
+}
+
+@import "../utilidades/mediaqueries";

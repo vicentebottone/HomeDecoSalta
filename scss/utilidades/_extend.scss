@@ -1,0 +1,66 @@
+// extend
+
+%header{
+    padding: 0px;
+    background-color: cadetblue;
+    margin: 0;
+    border-color:  rgb(123, 124, 124);
+    width: 100%;
+}
+%titulo-principal{
+    text-decoration: none;
+    color: beige;
+    text-align: center;
+}
+%nav-ul-li{
+    list-style: none;
+    display: inline-block;
+    padding-left: 30px;
+    margin: 10px;
+    max-width: 100%;
+}
+
+%formulario{
+    box-sizing: border-box;
+    background-color: beige;
+    margin: 10px;
+    padding: 10px;
+    border: solid rgb(134, 132, 132);
+}
+
+%footer{
+    text-decoration: none;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 100vh;
+}
+
+%logo{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    bottom: 30px;
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 0px;
+}
+
+%boton-volver-arriba{
+    display: inline-block;
+    padding: 5px;
+    position: sticky;
+    left: 0;
+    margin: 0;
+}
+%parrafo-productos-velas{
+    color: whitesmoke;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
