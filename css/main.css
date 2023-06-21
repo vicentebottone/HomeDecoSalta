@@ -20,7 +20,7 @@ header nav div ul li, header nav div ul li ul li {
   margin: 10px;
   max-width: 100%; }
 
-main form fieldset {
+form fieldset {
   box-sizing: border-box;
   background-color: beige;
   margin: 10px;
@@ -51,7 +51,7 @@ footer div .boton-volver-arriba {
   left: 0;
   margin: 0; }
 
-main .parrafo-productos-velas {
+.parrafo-productos-velas {
   color: whitesmoke;
   text-align: center;
   margin-left: 150px;
@@ -167,70 +167,76 @@ main div div .carousel-inner img {
   max-width: 100%;
   height: 100%; }
 
+main h2 {
+  margin-bottom: 10px; }
+
 main .caja {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  grid-template-rows: repeat(3, 2fr);
-  justify-content: center;
-  align-items: center; }
-  main .caja h3 {
-    text-align: center;
-    color: whitesmoke; }
-  main .caja .caja-uno, main .caja .caja-dos, main .caja .caja-tres, main .caja .caja-cuatro, main .caja .caja-cinco, main .caja .caja-seis {
-    width: 500px;
-    height: 500px;
-    margin: 20px;
-    margin-left: 200px;
-    padding: 10px;
-    background-color: beige; }
-  main .caja .parrafo-productos {
-    padding: 5px;
-    margin: 5px;
-    text-align: center; }
-
-main section h2 {
-  text-align: center;
-  color: black;
-  background-color: beige; }
-
-main section .caja2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 3fr);
   grid-template-rows: repeat(1, 1fr);
   justify-content: center;
-  align-items: center; }
-  main section .caja2 .card-nueve, main section .caja2 .card-diez {
-    width: 500px;
-    height: 500px;
-    margin: 20px;
-    margin-left: 200px;
-    padding: 10px;
-    background-color: beige; }
+  align-items: center;
+  overflow: hidden; }
+  main .caja a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: translateZ(0); }
+    main .caja a:hover {
+      transform: scale(1.1); }
+    main .caja a .tarjetas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      height: 100%;
+      gap: 1rem;
+      padding: 1rem;
+      margin-right: 1rem;
+      margin-left: 10px;
+      margin-top: 1rem;
+      margin-bottom: 0; }
+    main .caja a::after {
+      content: attr(data-description);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 90%;
+      padding: 5px;
+      background-color: beige;
+      color: black;
+      font-size: 14px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease; }
+    main .caja a:hover::after {
+      opacity: 1; }
 
-main .caja-velas {
+.caja-velas {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   gap: 5px;
-  margin-left: 200px; }
-  main .caja-velas .imagen-velas {
-    width: 300px;
-    height: 300px;
+  margin-left: 20px; }
+  .caja-velas .imagen-velas {
+    width: 400px;
+    height: 400px;
     margin: 30px;
-    margin-left: 0;
+    margin-left: 10px;
     padding: 10px;
     background-color: beige;
-    margin-bottom: 50px; }
+    margin-bottom: 3px; }
 
-main .destacados {
+.destacados {
   text-align: center;
   margin: 0px;
   padding: 20px;
   background-color: beige; }
 
-main form {
+form {
   background-color: darkgray;
   text-align: center;
   padding: 100px; }
@@ -253,51 +259,53 @@ footer {
 /* media queries */
 /* para celulares */
 @media (max-width: 768px) {
-  .caja {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 1fr); }
-  .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis {
-    background-color: beige;
-    width: 300px;
-    height: 300px;
-    margin-left: 100px;
-    padding: 2px; }
-  .caja2 {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr); }
-  .card-nueve, .card-diez {
-    background-color: beige;
-    width: 300px;
-    height: 300px;
-    padding: 2px;
-    margin-left: 100px; }
+  main .caja {
+    grid-template-columns: repeat(1, 3fr);
+    grid-template-rows: repeat(3, 1fr); }
+  main .caja a .tarjetas {
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin: 20px; }
+  main .caja a::after {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px; }
   .caja-velas {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    justify-content: center;
-    align-items: start;
-    margin-left: 0px; }
-  .imagen-velas {
-    background-color: beige;
-    width: 270px;
-    height: 250px; } }
+    grid-template-columns: 1fr; }
+    .caja-velas div {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .caja-velas div img.imagen-velas {
+        width: 100%;
+        height: 30rem; }
+      .caja-velas div button {
+        width: auto;
+        margin-top: 1px; }
+      .caja-velas div span {
+        display: block; } }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
     font-size: 16px; }
-  .caja {
+  main .caja {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 3fr);
     grid-template-rows: repeat(3, 1fr); }
-  .caja-uno, .caja-dos, .caja-tres, .caja-cuatro, .caja-cinco, .caja-seis {
-    background-color: beige;
-    width: 300px;
-    height: 300px;
-    margin-left: 100px;
-    padding: 2px; }
+  main .caja a .tarjetas {
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin: 50px;
+    margin-left: 225px;
+    width: 50%;
+    height: 50%; }
+  main .caja a::after {
+    margin-left: 225px;
+    width: 50%;
+    padding: 10px;
+    font-size: 12px; }
   .caja2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
