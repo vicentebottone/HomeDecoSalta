@@ -21,29 +21,66 @@
     }
   }
     .caja-velas {
-      grid-template-columns: 1fr;
-
-      div {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+      .posicion-uno{
+        grid-area: posicion-uno;
+      }
+      .posicion-dos{
+        grid-area: posicion-dos;
+      }
+      .posicion-tres{
+        grid-area: posicion-tres;
+      }
+      .posicion-cuatro{
+        grid-area: posicion-cuatro;
+      }
+      .posicion-cinco{
+        grid-area: posicion-cinco;
+      }
+      .posicion-seis{
+        grid-area: posicion-seis;
+      }
+      .posicion-siete{
+        grid-area: posicion-siete;
+      }
+      .posicion-ocho{
+        grid-area: posicion-ocho;
+      }
+      .posicion-boton{
+        grid-area: posicion-boton;
+      }
+        display: grid;
+        grid-template-columns: repeat(1, 8fr);
+        grid-template-rows: repeat(8, 1fr);
+        gap: 1px;
+        margin-left: 50px;
+        grid-template-areas: 
+        "posicion-uno" 
+        "posicion-dos"
+        "posicion-tres"
+        "posicion-cuatro"
+        "posicion-cinco" 
+        "posicion-seis"
+        "posicion-siete" 
+        "posicion-ocho";
 
         img.imagen-velas {
-          width: 100%;
-          height: 30rem;
+          width: 80%;
+          height: 60%;
         }
 
         button {
           width: auto;
-          margin-top: 1px;
+          margin-top: 40px;
         }
-
-        span {
-          display: block;
-        }
-      }
+    }
+    footer {
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center; 
+    }
+  
+    .boton-volver-arriba {
+      margin-top: 5px; 
     }
   }
   
@@ -53,8 +90,8 @@
     }
     main .caja {
       display: grid;
-      grid-template-columns: repeat(1, 3fr);
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 3fr);
+      grid-template-rows: repeat(1, 1fr);
     }
     
     main .caja a {
@@ -63,8 +100,8 @@
         padding: 0.5rem;
         margin: 50px;
         margin-left: 225px;
-        width: 50%;
-        height: 50%;
+        width: 80%;
+        height: 80%;
       }
       
       &::after {

@@ -33,7 +33,9 @@ footer div ul li {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  max-width: 100vh; }
+  max-width: 100vh;
+  position: sticky;
+  bottom: 0; }
 
 footer div ul li .ig-logo, footer div .wpplogo {
   position: fixed;
@@ -215,12 +217,15 @@ main .caja {
 
 .caja-velas {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: repeat(4, 6fr);
+  grid-template-rows: repeat(2, 2fr);
   gap: 5px;
-  margin-left: 20px; }
+  margin-left: 20px;
+  grid-template-areas: "posicion-uno posicion-dos posicion-tres posicion-cuatro" "posicion-cinco posicion-seis posicion-siete posicion-ocho"; }
+  .caja-velas .posicion-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .caja-velas .imagen-velas {
     width: 400px;
     height: 400px;
@@ -229,6 +234,33 @@ main .caja {
     padding: 10px;
     background-color: beige;
     margin-bottom: 3px; }
+
+.posicion-uno {
+  grid-area: posicion-uno; }
+
+.posicion-dos {
+  grid-area: posicion-dos; }
+
+.posicion-tres {
+  grid-area: posicion-tres; }
+
+.posicion-cuatro {
+  grid-area: posicion-cuatro; }
+
+.posicion-cinco {
+  grid-area: posicion-cinco; }
+
+.posicion-seis {
+  grid-area: posicion-seis; }
+
+.posicion-siete {
+  grid-area: posicion-siete; }
+
+.posicion-ocho {
+  grid-area: posicion-ocho; }
+
+.posicion-boton {
+  grid-area: posicion-boton; }
 
 .destacados {
   text-align: center;
@@ -247,8 +279,12 @@ footer {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 30px;
-  background-color: beige; }
+  gap: 1px;
+  background-color: beige;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 100%; }
   footer div ul li .ig-logo {
     left: 0px; }
   footer div .wpplogo {
@@ -271,36 +307,57 @@ footer {
     padding: 10px;
     font-size: 12px; }
   .caja-velas {
-    grid-template-columns: 1fr; }
-    .caja-velas div {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; }
-      .caja-velas div img.imagen-velas {
-        width: 100%;
-        height: 30rem; }
-      .caja-velas div button {
-        width: auto;
-        margin-top: 1px; }
-      .caja-velas div span {
-        display: block; } }
+    display: grid;
+    grid-template-columns: repeat(1, 8fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1px;
+    margin-left: 50px;
+    grid-template-areas: "posicion-uno"  "posicion-dos" "posicion-tres" "posicion-cuatro" "posicion-cinco"  "posicion-seis" "posicion-siete"  "posicion-ocho"; }
+    .caja-velas .posicion-uno {
+      grid-area: posicion-uno; }
+    .caja-velas .posicion-dos {
+      grid-area: posicion-dos; }
+    .caja-velas .posicion-tres {
+      grid-area: posicion-tres; }
+    .caja-velas .posicion-cuatro {
+      grid-area: posicion-cuatro; }
+    .caja-velas .posicion-cinco {
+      grid-area: posicion-cinco; }
+    .caja-velas .posicion-seis {
+      grid-area: posicion-seis; }
+    .caja-velas .posicion-siete {
+      grid-area: posicion-siete; }
+    .caja-velas .posicion-ocho {
+      grid-area: posicion-ocho; }
+    .caja-velas .posicion-boton {
+      grid-area: posicion-boton; }
+    .caja-velas img.imagen-velas {
+      width: 80%;
+      height: 60%; }
+    .caja-velas button {
+      width: auto;
+      margin-top: 40px; }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; }
+  .boton-volver-arriba {
+    margin-top: 5px; } }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
     font-size: 16px; }
   main .caja {
     display: grid;
-    grid-template-columns: repeat(1, 3fr);
-    grid-template-rows: repeat(3, 1fr); }
+    grid-template-columns: repeat(3, 3fr);
+    grid-template-rows: repeat(1, 1fr); }
   main .caja a .tarjetas {
     gap: 0.5rem;
     padding: 0.5rem;
     margin: 50px;
     margin-left: 225px;
-    width: 50%;
-    height: 50%; }
+    width: 80%;
+    height: 80%; }
   main .caja a::after {
     margin-left: 225px;
     width: 50%;
