@@ -33,9 +33,7 @@ footer div ul li {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  max-width: 100vh;
-  position: sticky;
-  bottom: 0; }
+  max-width: 100vh; }
 
 footer div ul li .ig-logo, footer div .wpplogo {
   position: fixed;
