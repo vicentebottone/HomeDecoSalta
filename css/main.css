@@ -280,11 +280,7 @@ footer {
   align-items: center;
   text-align: center;
   gap: 1px;
-  background-color: beige;
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  height: 100%; }
+  background-color: beige; }
   footer div ul li .ig-logo {
     left: 0px; }
   footer div .wpplogo {
@@ -295,6 +291,8 @@ footer {
 /* media queries */
 /* para celulares */
 @media (max-width: 768px) {
+  header {
+    width: 100%; }
   main .caja {
     grid-template-columns: repeat(1, 3fr);
     grid-template-rows: repeat(3, 1fr); }

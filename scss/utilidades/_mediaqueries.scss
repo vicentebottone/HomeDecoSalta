@@ -1,7 +1,9 @@
 /* media queries */
 /* para celulares */
 @media (max-width: 768px) {
-  
+  header{
+    width: 100%;
+  }
   main .caja {
     grid-template-columns: repeat(1, 3fr);
     grid-template-rows: repeat(3, 1fr);
