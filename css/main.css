@@ -333,16 +333,47 @@ footer {
 /* para celulares */
 @media (max-width: 768px) {
   header {
-    max-height: 230px;
+    max-height: 300px;
     transition: max-height 0.3s ease-in-out;
     overflow: hidden; }
-  .navbar-collapse {
+    header .imagen-titulo {
+      max-width: 100%;
+      height: auto; }
+    header h1 {
+      font-size: 18px; }
+  .navbar-brand {
+    padding: 0; }
+  .navbar-brand img {
+    max-height: 100%;
+    max-width: 100%; }
+  .custom-toggler {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem; }
+  .custom-toggler .navbar-toggler-icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: cadetblue;
+    border-radius: 2px; }
+  .navbar-nav {
+    width: 100%;
+    background-color: cadetblue; }
+  .navbar-nav .nav-item .nav-link {
+    padding: 0.5rem;
+    color: beige; }
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem; }
+  .navbar-toggler-icon {
+    width: 1.25em;
+    height: 1.25em; }
+  .collapse.navbar-collapse {
     max-height: 0;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.35s ease-out;
     overflow: hidden; }
-  .navbar-toggler:checked, .navbar-collapse {
-    max-height: 1000px;
-    transition: max-height 0.3s ease-in-out; }
+  .collapse.navbar-collapse.show {
+    max-height: 200px; }
   main .caja {
     grid-template-columns: repeat(1, 3fr);
     grid-template-rows: repeat(3, 1fr); }
