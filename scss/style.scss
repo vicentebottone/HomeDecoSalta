@@ -251,8 +251,34 @@ main{
         background-color: $color-terciario;
         text-align: center;
         padding: $med-padding-form;
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
         fieldset{
             @extend %formulario;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
     }
 
@@ -264,6 +290,8 @@ footer{
     text-align: center;
     gap: 1px;
     background-color: $color-principal;
+    position: relative;
+    padding-bottom: 50px;
     div{
         ul{
             li{
@@ -275,10 +303,21 @@ footer{
             }
         }
     }
-    div{
-        .boton-volver-arriba{
-            @extend %boton-volver-arriba;
+    .boton-volver-arriba{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @extend %boton-volver-arriba;
+        a{
+            @extend %boton-volver-arriba-a;
         }
+        a:hover{
+            background-color: $color-secundario;
+        }
+        a:focus{
+            outline: none;
+        }
+            
     }
     div{
         .wpplogo{

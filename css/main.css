@@ -28,6 +28,7 @@ form fieldset {
   border: solid #868484; }
 
 footer div ul li {
+  position: relative;
   text-decoration: none;
   display: inline-block;
   justify-content: space-between;
@@ -37,25 +38,34 @@ footer div ul li {
 
 footer div ul li .ig-logo, footer div .wpplogo {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   bottom: 30px;
   z-index: 2;
   text-align: center;
   padding-bottom: 0px; }
 
-footer div .boton-volver-arriba {
+footer .boton-volver-arriba {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999; }
+
+footer .boton-volver-arriba a {
   display: inline-block;
-  padding: 5px;
-  position: sticky;
-  left: 0;
-  margin: 0; }
+  background-color: cadetblue;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none; }
 
 .parrafo-productos-velas {
   color: whitesmoke;
   text-align: center;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
   margin-top: 30px;
   margin-bottom: 30px; }
 
@@ -270,6 +280,29 @@ form {
   background-color: darkgray;
   text-align: center;
   padding: 100px; }
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; }
+  form input[type="reset"] {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px; }
+  form input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; }
 
 /*footer*/
 footer {
@@ -278,9 +311,19 @@ footer {
   align-items: center;
   text-align: center;
   gap: 1px;
-  background-color: beige; }
+  background-color: beige;
+  position: relative;
+  padding-bottom: 50px; }
   footer div ul li .ig-logo {
     left: 0px; }
+  footer .boton-volver-arriba {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+    footer .boton-volver-arriba a:hover {
+      background-color: cadetblue; }
+    footer .boton-volver-arriba a:focus {
+      outline: none; }
   footer div .wpplogo {
     right: 30px;
     background-color: green;
@@ -290,7 +333,16 @@ footer {
 /* para celulares */
 @media (max-width: 768px) {
   header {
-    width: 100%; }
+    max-height: 230px;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden; }
+  .navbar-collapse {
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden; }
+  .navbar-toggler:checked, .navbar-collapse {
+    max-height: 1000px;
+    transition: max-height 0.3s ease-in-out; }
   main .caja {
     grid-template-columns: repeat(1, 3fr);
     grid-template-rows: repeat(3, 1fr); }
@@ -351,12 +403,12 @@ footer {
     gap: 0.5rem;
     padding: 0.5rem;
     margin: 50px;
-    margin-left: 225px;
+    margin-left: 25px;
     width: 80%;
     height: 80%; }
   main .caja a::after {
-    margin-left: 225px;
-    width: 50%;
+    margin-left: 25px;
+    width: 80%;
     padding: 10px;
     font-size: 12px; }
   .caja2 {
@@ -371,15 +423,39 @@ footer {
     margin-left: 100px; }
   .caja-velas {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 3fr);
     grid-template-rows: repeat(3, 1fr);
-    justify-content: center;
-    align-items: start;
-    margin-left: 0px; }
-  .imagen-velas {
-    background-color: beige;
-    width: 270px;
-    height: 250px; } }
+    gap: 1px;
+    margin-left: 50px;
+    grid-template-areas: "posicion-uno posicion-dos" "posicion-tres posicion-cuatro" "posicion-cinco posicion-seis"  "posicion-siete posicion-ocho"; }
+    .caja-velas .posicion-uno {
+      grid-area: posicion-uno; }
+    .caja-velas .posicion-dos {
+      grid-area: posicion-dos; }
+    .caja-velas .posicion-tres {
+      grid-area: posicion-tres; }
+    .caja-velas .posicion-cuatro {
+      grid-area: posicion-cuatro; }
+    .caja-velas .posicion-cinco {
+      grid-area: posicion-cinco; }
+    .caja-velas .posicion-seis {
+      grid-area: posicion-seis; }
+    .caja-velas .posicion-siete {
+      grid-area: posicion-siete; }
+    .caja-velas .posicion-ocho {
+      grid-area: posicion-ocho; }
+    .caja-velas .posicion-boton {
+      grid-area: posicion-boton; }
+    .caja-velas img.imagen-velas {
+      width: 80%;
+      height: 60%; }
+    .caja-velas button {
+      width: auto;
+      margin-top: 40px; }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; } }
 
 /* Estilos adicionales para tabletas en orientación horizontal */
 @media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
@@ -407,12 +483,36 @@ footer {
     margin-left: 100px; }
   .caja-velas {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 3fr);
     grid-template-rows: repeat(3, 1fr);
-    justify-content: center;
-    align-items: start;
-    margin-left: 0px; }
-  .imagen-velas {
-    background-color: beige;
-    width: 270px;
-    height: 250px; } }
+    gap: 1px;
+    margin-left: 50px;
+    grid-template-areas: "posicion-uno posicion-dos" "posicion-tres posicion-cuatro" "posicion-cinco posicion-seis"  "posicion-siete posicion-ocho"; }
+    .caja-velas .posicion-uno {
+      grid-area: posicion-uno; }
+    .caja-velas .posicion-dos {
+      grid-area: posicion-dos; }
+    .caja-velas .posicion-tres {
+      grid-area: posicion-tres; }
+    .caja-velas .posicion-cuatro {
+      grid-area: posicion-cuatro; }
+    .caja-velas .posicion-cinco {
+      grid-area: posicion-cinco; }
+    .caja-velas .posicion-seis {
+      grid-area: posicion-seis; }
+    .caja-velas .posicion-siete {
+      grid-area: posicion-siete; }
+    .caja-velas .posicion-ocho {
+      grid-area: posicion-ocho; }
+    .caja-velas .posicion-boton {
+      grid-area: posicion-boton; }
+    .caja-velas img.imagen-velas {
+      width: 80%;
+      height: 60%; }
+    .caja-velas button {
+      width: auto;
+      margin-top: 40px; }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; } }

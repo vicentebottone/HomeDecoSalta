@@ -2,8 +2,20 @@
 /* para celulares */
 @media (max-width: 768px) {
   header{
-    width: 100%;
+    max-height: 230px;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
   }
+  .navbar-collapse{
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  .navbar-toggler:checked, .navbar-collapse{
+    max-height: 1000px;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
   main .caja {
     grid-template-columns: repeat(1, 3fr);
     grid-template-rows: repeat(3, 1fr);
@@ -101,14 +113,14 @@
         gap: 0.5rem;
         padding: 0.5rem;
         margin: 50px;
-        margin-left: 225px;
+        margin-left: 25px;
         width: 80%;
         height: 80%;
       }
       
       &::after {
-        margin-left: 225px;
-        width: 50%;
+        margin-left: 25px;
+        width: 80%;
         padding: 10px;
         font-size: 12px;
       }
@@ -126,17 +138,58 @@
       margin-left: 100px;
     }
     .caja-velas {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      justify-content: center;
-      align-items: start;
-      margin-left: 0px;
+      .posicion-uno{
+        grid-area: posicion-uno;
+      }
+      .posicion-dos{
+        grid-area: posicion-dos;
+      }
+      .posicion-tres{
+        grid-area: posicion-tres;
+      }
+      .posicion-cuatro{
+        grid-area: posicion-cuatro;
+      }
+      .posicion-cinco{
+        grid-area: posicion-cinco;
+      }
+      .posicion-seis{
+        grid-area: posicion-seis;
+      }
+      .posicion-siete{
+        grid-area: posicion-siete;
+      }
+      .posicion-ocho{
+        grid-area: posicion-ocho;
+      }
+      .posicion-boton{
+        grid-area: posicion-boton;
+      }
+        display: grid;
+        grid-template-columns: repeat(2, 3fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1px;
+        margin-left: 50px;
+        grid-template-areas: 
+        "posicion-uno posicion-dos"
+        "posicion-tres posicion-cuatro"
+        "posicion-cinco posicion-seis" 
+        "posicion-siete posicion-ocho";
+
+        img.imagen-velas {
+          width: 80%;
+          height: 60%;
+        }
+
+        button {
+          width: auto;
+          margin-top: 40px;
+        }
     }
-    .imagen-velas {
-      background-color: beige;
-      width: 270px;
-      height: 250px;
+    footer {
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center; 
     }
   }
   
@@ -169,18 +222,59 @@
       padding: 2px;
       margin-left: 100px;
     }
-    .caja-velas {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      justify-content: center;
-      align-items: start;
-      margin-left: 0px;
+      .caja-velas {
+      .posicion-uno{
+        grid-area: posicion-uno;
+      }
+      .posicion-dos{
+        grid-area: posicion-dos;
+      }
+      .posicion-tres{
+        grid-area: posicion-tres;
+      }
+      .posicion-cuatro{
+        grid-area: posicion-cuatro;
+      }
+      .posicion-cinco{
+        grid-area: posicion-cinco;
+      }
+      .posicion-seis{
+        grid-area: posicion-seis;
+      }
+      .posicion-siete{
+        grid-area: posicion-siete;
+      }
+      .posicion-ocho{
+        grid-area: posicion-ocho;
+      }
+      .posicion-boton{
+        grid-area: posicion-boton;
+      }
+        display: grid;
+        grid-template-columns: repeat(2, 3fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1px;
+        margin-left: 50px;
+        grid-template-areas: 
+        "posicion-uno posicion-dos"
+        "posicion-tres posicion-cuatro"
+        "posicion-cinco posicion-seis" 
+        "posicion-siete posicion-ocho";
+
+        img.imagen-velas {
+          width: 80%;
+          height: 60%;
+        }
+
+        button {
+          width: auto;
+          margin-top: 40px;
+        }
     }
-    .imagen-velas {
-      background-color: beige;
-      width: 270px;
-      height: 250px;
+    footer {
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center; 
     }
   }
   
